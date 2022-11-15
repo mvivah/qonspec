@@ -17,7 +17,8 @@
             }
         </style>
     </head>
-    <body class="relative w-full overflow-hidden bg-gradient-to-b from-blue-10 to-blue-100">
+    <body class="relative w-full overflow-scroll bg-gradient-to-b from-blue-50 to-blue-200">
+    {{-- <body> --}}
         <header class="sticky top-0 mb-16">
             <nav class="w-full bg-white bg-opacity-70 navbar peer-checked:navbar-active md:absolute md:bg-transparent">
                 <div class="container m-auto px-2 md:px-12 lg:px-7">
@@ -28,6 +29,13 @@
                                 <img src="images/logo.png" alt="Qonspec"  class="h-10"/>
                                 </div>onspec
                             </a>
+                        {{-- Hambuger --}}
+                        <input class="peer hidden" type="checkbox" name="hambuger" id="hambuger">
+                        <label for="hambuger" class="peer-checked:hambuger block relative cursor-pointer lg:hidden border-2 border-sky-300 peer-checked:border-2 peer-checked:border-white p-3 rounded-md transition-all">
+                            <div class="m-auto w-6 h-0.5 rounded bg-sky-500 transition-all duration-300"></div>
+                            <div class="m-auto mt-2 w-6 h-0.5 rounded bg-sky-500 transition-all duration-300"></div>
+                            <div class="m-auto mt-2 w-6 h-0.5 rounded bg-sky-500 transition-all duration-300"></div>
+                        </label>
                         </div>
                         <div class="navmenu w-full flex-wrap justify-end items-center mb-16 mx-6 space-y-20 p-6 rounded-xl shadow-lg bg-white lg:space-y-0 lg:p-0 lg:m-0 lg:flex md:flex-nowrap lg:bg-transparent lg:w-7/12 lg:shadow-none">
                             <div class="text-gray-600 pr-4">
@@ -102,7 +110,7 @@
                                                 <h1 class="text-4xl text-gray-700 font-bold text-center md:text-5xl">Join our clientele.</h1>
                                                 <p class="text-xl text-center">We do system requirements analysis, systems maintenance and everything in between. Can we show you how?</p>
                                                 <div class="flex flex-wrap justify-center gap-6">
-                                                    <a href="#about" title="More" class="block w-full py-3 px-6 text-center rounded-xl bg-sky-100 transition hover:bg-sky-200 active:bg-sky-300 focus:bg-sky-200 sm:w-max">
+                                                    <a href="#about" title="More" class="block w-full py-3 px-6 text-center rounded-xl bg-sky-100 transition hover:bg-sky-200 active:bg-sky-500 focus:bg-sky-200 sm:w-max">
                                                         <span class="text-sky-700 font-semibold">
                                                             More about
                                                         </span>
@@ -185,7 +193,6 @@
                                     <h3 class="text-2xl font-semibold text-sky-900">Quality Assurance (QA)</h3>
                                     <p>As a critical processes in software and systems development, we conduct Quality Assurance to guarantee the delivery of the intended value to the business.</p>
                                 </div>
-
                             </div>
                         </div>
                         <div class="lg:col-span-2">
@@ -195,7 +202,6 @@
                                     <h3 class="text-2xl font-semibold text-sky-900">Project Management</h3>
                                     <p>We do hardware installation, maintenance and provide technical advisory as and when required.</p>
                                 </div>
-
                             </div>
                         </div>
 
@@ -204,7 +210,6 @@
                                 <img src="images/mentor.webp" alt="illustration" loading="lazy" width="900" height="600">
                                 <h3 class="text-2xl font-semibold text-sky-900">Developer Mentorship</h3>
                                 <p class="mb-6">We strongly believe that none of us the there yet, we therefore pull each others’ hands through providing internships and career guidance workshops.</p>
-
                             </div>
                         </div>
                     </div>
@@ -256,7 +261,6 @@
                                             <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                                         </svg>
                                     </a>
-
                                 </div>
                             </div>
                             <div class="space-y-4 text-center">
@@ -336,7 +340,7 @@
                     </div>
                 </div>
             </section>
-            <footer class="sticky bottom-0">
+            <footer class="fixed bottom-0">
                 <div class="text-center">
                     <p>Copyright © 2022 - Qonspec</p>
                 </div>
@@ -352,7 +356,15 @@
             </div>
             </div>
         </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         {{-- <script src="{{asset('js/app.js')}}"></script>
         <script src="{{asset('js/script.js')}}"></script> --}}
+        <script>
+            function Menu(e){
+                let list = document.querySelector('ul');
+                e.name === 'menu' ? (e.name = "close",list.classList.add('top-[80px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[80px]'),list.classList.remove('opacity-100'))
+            }
+            </script>
     </body>
 </html>
